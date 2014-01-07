@@ -17,14 +17,18 @@
      *  Initial setup
      */
     NiiceColourWidget.prototype.initialize = function(opts) {
-        var img, thief, colours;
+        var self = this,
+            img, thief, colours;
 
         this.insertStyles();
 
         img = document.querySelector(opts.selector);
-        colours = this.getColours(img, opts.number_of_colours);
 
-        this.renderColours(img, colours);
+        imagesLoaded(img, function() {
+            colours = self.getColours(img, opts.number_of_colours);
+
+            self.renderColours(img, colours);
+        });
 
         return this;
     };
