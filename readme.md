@@ -4,7 +4,7 @@ Retrieve colours for images and links them to colour searches on [niice.co](http
 
 ## Usage
 
-```js
+```html
 // Include the niice colour widget script
 <script type="text/javascript" src="js/niice-color-widget.js"></script>
 
