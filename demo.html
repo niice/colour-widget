@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Niice colour widget demo</title>
+
+    <meta charset="utf-8">
+
+    <style>
+        body {
+            margin: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="img/sample.jpg">
+
+    <script type="text/javascript" src="lib/color-thief.js"></script>
+    <script type="text/javascript" src="src/color-widget.js"></script>
+    <script type="text/javascript">
+        var niice_widget = new NiiceColourWidget({
+            selector: 'img'
+        });
+    </script>
+</body>
+</html>
