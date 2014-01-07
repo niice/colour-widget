@@ -17,6 +17,10 @@ Retrieve colours for images and links them to colour searches on [niice.co](http
 </script>
 ```
 
+## Attribution
+
+* [colour-theif](https://github.com/lokesh/color-thief)
+
 ## MIT License
 
 Copyright (C) 2013 Pete Hawkins
