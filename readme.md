@@ -5,10 +5,10 @@ Retrieve colours for images and links them to colour searches on [niice.co](http
 ## Usage
 
 ```html
-// Include the niice colour widget script
+<!-- Include the niice colour widget script -->
 <script type="text/javascript" src="js/niice-color-widget.js"></script>
 
-// Somewhere in the document after the niice script include this:
+<!-- Somewhere in the document after the niice script include this: -->
 <script type="text/javascript">
     new NiiceColourWidget({
         selector: 'img', // Any valid CSS selector e.g. .main-image img
