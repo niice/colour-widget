@@ -18,17 +18,19 @@
      */
     NiiceColourWidget.prototype.initialize = function(opts) {
         var self = this,
+            mem_image = document.createElement('img'),
             img, thief, colours;
 
         this.insertStyles();
 
         img = document.querySelector(opts.selector);
 
-        imagesLoaded(img, function() {
+        // Ensure the image is loadded
+        mem_image.onload = function() {
             colours = self.getColours(img, opts.number_of_colours);
-
             self.renderColours(img, colours);
-        });
+        };
+        mem_image.src = img.src;
 
         return this;
     };
