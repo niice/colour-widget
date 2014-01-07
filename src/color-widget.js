@@ -6,22 +6,9 @@
  *  @author twitter.com/peteyhawkins
  */
 (function(win, document) {
+    "use strict";
 
-    var NUMBER_OF_COLOURS = 5,
-        NiiceColourWidget;
-
-
-    function componentToHex(c) {
-        var hex = c.toString(16);
-        return hex.length == 1 ? "0" + hex : hex;
-    }
-
-    function rgbToHex(r, g, b) {
-        return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-    }
-
-
-    NiiceColourWidget = function(opts) {
+    var NiiceColourWidget = function(opts) {
         this.initialize(opts);
     };
 
@@ -35,7 +22,7 @@
         this.insertStyles();
 
         img = document.querySelector(opts.selector);
-        colours = this.getColours(img);
+        colours = this.getColours(img, opts.number_of_colours);
 
         this.renderColours(img, colours);
 
@@ -56,17 +43,17 @@
     /*
      *  Returns an array of dominant colours in the provided image
      */
-    NiiceColourWidget.prototype.getColours = function(img) {
+    NiiceColourWidget.prototype.getColours = function(img, number_of_colours) {
         var thief = new ColorThief(),
             rgb_values, colours;
 
         try {
-            rgb_values = thief.getPalette(img, NUMBER_OF_COLOURS);
+            rgb_values = thief.getPalette(img, number_of_colours);
 
             // Return the colours and convert to an array of hex values
             return rgb_values.map(function(colour) {
-                return rgbToHex.apply(this, colour);
-            });
+                return this._rgbToHex(colour);
+            }, this);
         }
         catch (e) {
             console.error("ColorThief error:", e);
@@ -106,6 +93,27 @@
     };
 
 
+    /*
+     *  ------------------------------------------------------------------------
+     *  Helper methods
+     *  ------------------------------------------------------------------------
+     */
+
+
+    NiiceColourWidget.prototype._rgbToHex = function(rgb) {
+        return '#'+ rgb.map(function(val) {
+            return this._componentToHex(val);
+        }, this).join('');
+    };
+
+
+    NiiceColourWidget.prototype._componentToHex = function (c) {
+        var hex = c.toString(16);
+        return hex.length == 1 ? "0" + hex : hex;
+    };
+
+
+    // Export to global
     win.NiiceColourWidget = NiiceColourWidget;
 
 })(window, document);
