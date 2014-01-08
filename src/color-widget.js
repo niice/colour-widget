@@ -41,7 +41,7 @@
      */
     NiiceColourWidget.prototype.insertStyles = function() {
         var styles = document.createElement('style');
-        styles.innerHTML = ".colours-box a { border-radius: 100%; display: inline-block; width: 36px; max-width: 36px; height: 36px; margin-left: 5px; } span.powered-by { font-family: "helvetica neue", helvetica, arial, sans-serif; font-size: 12px; font-style: italic; color: #b8b8b8; letter-spacing: 1px; display: block; width: 75px; text-align: right; line-height: 20px; } span.powered-by a { display: block; background: url(img/niice-logo.png) no-repeat center center; height: 18px; width: 42px; text-indent: 99em; float: right; margin-right: 2px; }";
+        styles.innerHTML = ".colours-box a { border-radius: 100%; display: inline-block; width: 36px; max-width: 36px; height: 36px; margin-left: 5px; } span.powered-by { font-family: 'helvetica neue', helvetica, arial, sans-serif; font-size: 12px; font-style: italic; color: #b8b8b8; letter-spacing: 1px; display: block; width: 75px; text-align: right; line-height: 20px; } span.powered-by a { display: block; background: url(img/niice-logo.png) no-repeat center center; height: 18px; width: 42px; text-indent: 99em; float: right; margin-right: 2px; }";
         document.body.appendChild(styles);
     };
 
