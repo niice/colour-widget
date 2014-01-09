@@ -8,29 +8,34 @@
 (function(win, document) {
     "use strict";
 
-    var NiiceColourWidget = function(opts) {
-        this.initialize(opts);
+    var NiiceColourWidget = function(options) {
+        this.options = options;
+        this.initialize();
     };
 
 
     /*
      *  Initial setup
      */
-    NiiceColourWidget.prototype.initialize = function(opts) {
-        var self = this,
-            mem_image = document.createElement('img'),
-            img, thief, colours;
+    NiiceColourWidget.prototype.initialize = function() {
+        var imgs = document.querySelectorAll(this.options.selector);
 
-        this.insertStyles();
+        if ( ! this.options.disable_styles) this.insertStyles();
 
-        img = document.querySelector(opts.selector);
+        Array.prototype.slice.call(imgs).forEach(function(img) {
+            var mem_image = document.createElement('img'),
+                self = this;
 
-        // Ensure the image is loadded
-        mem_image.onload = function() {
-            colours = self.getColours(img, opts.number_of_colours);
-            self.renderColours(img, colours);
-        };
-        mem_image.src = img.src;
+            // Ensure the image is loadded
+            mem_image.onload = function() {
+                var colours = self.getColours(img, self.options.number_of_colours);
+
+                self.renderColours(img, colours);
+            };
+
+            mem_image.src = img.src;
+
+        }, this);
 
         return this;
     };

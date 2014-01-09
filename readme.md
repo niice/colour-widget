@@ -12,7 +12,8 @@ Retrieve colours for images and links them to colour searches on [niice.co](http
 <script type="text/javascript">
     new NiiceColourWidget({
         selector: 'img', // Any valid CSS selector e.g. .main-image img
-        number_of_colours: 6
+        number_of_colours: 6,
+        disable_styles: false // if true we don't insert our CSS styling
     });
 </script>
 ```
