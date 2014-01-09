@@ -9,7 +9,7 @@ module.exports = function(grunt) {
         uglify: {
             main: {
                 files: {
-                    'dist/niice-colour-widget.min.js': ['lib/color-thief.js', 'src/color-widget.js']
+                    'dist/niice-colour-widget.min.js': ['lib/typeof.js', 'lib/color-thief.js', 'src/color-widget.js']
                 }
             }
         }

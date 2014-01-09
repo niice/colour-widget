@@ -9,7 +9,14 @@
     "use strict";
 
     var NiiceColourWidget = function(options) {
+        // Default options
+        if ( ! is(options, "object")) options = {};
+        if ( ! is(options.selector, "string")) options.selector = "img";
+        if ( ! is(options.number_of_colours, "number")) options.number_of_colours = 5;
+        if ( ! is(options.disable_styles, "boolean")) options.disable_styles = false;
+
         this.options = options;
+
         this.initialize();
     };
 
