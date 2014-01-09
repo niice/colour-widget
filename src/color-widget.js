@@ -88,7 +88,7 @@
             wrapper = document.createElement('div');
 
         wrapper.className = 'niice-colour-palette';
-        wrapper.innerHTML = '<div class="colours-box">'+ colours_template +'</div><span class="powered-by">Powered by <a href="http://niice.co">niice.co</a></span>';
+        wrapper.innerHTML = '<ul class="colours-box">'+ colours_template +'<li class="powered-by">Powered by <a href="http://niice.co">niice.co</a></li></ul>';
 
         img.parentNode.insertBefore(wrapper, img);
         img.remove();
@@ -104,7 +104,7 @@
         var html = "";
 
         colours.forEach(function(hex_colour) {
-            html += '<a href="http://niice.co/?search='+ encodeURIComponent(hex_colour) +'" style="background: '+ hex_colour +';">'+ hex_colour +'</a>';
+            html += '<li><a href="http://niice.co/?search='+ encodeURIComponent(hex_colour) +'" style="background: '+ hex_colour +';">'+ hex_colour +'</a></li>';
         });
 
         return html;
