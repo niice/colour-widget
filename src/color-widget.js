@@ -104,7 +104,7 @@
         var html = "";
 
         colours.forEach(function(hex_colour) {
-            html += '<li><a target="_blank" title="Search Niice for images with '+hex_colour+'" href="http://niice.co/?search='+ encodeURIComponent(hex_colour) +'" style="background: '+ hex_colour +';">'+ hex_colour +'</a></li>';
+            html += '<li><a target="_blank" title="Search Niice.co for images with '+hex_colour+'" href="http://niice.co/?search='+ encodeURIComponent(hex_colour) +'" style="background: '+ hex_colour +';">'+ hex_colour +'</a></li>';
         });
 
         return html;
