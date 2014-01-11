@@ -53,7 +53,7 @@
      */
     NiiceColourWidget.prototype.insertStyles = function() {
         var styles = document.createElement('style');
-        styles.innerHTML = ".colours-box a { border-radius: 100%; display: inline-block; width: 36px; max-width: 36px; height: 36px; margin-left: 5px; } span.powered-by { font-family: 'helvetica neue', helvetica, arial, sans-serif; font-size: 12px; font-style: italic; color: #b8b8b8; letter-spacing: 1px; display: block; width: 75px; text-align: right; line-height: 20px; } span.powered-by a { display: block; background: url(img/niice-logo.png) no-repeat center center; height: 18px; width: 42px; text-indent: 99em; float: right; margin-right: 2px; }";
+        styles.innerHTML = ".niice-colours-box a { border-radius: 100%; display: inline-block; width: 36px; max-width: 36px; height: 36px; margin-left: 5px; } span.niice-powered-by { font-family: 'helvetica neue', helvetica, arial, sans-serif; font-size: 12px; font-style: italic; color: #b8b8b8; letter-spacing: 1px; display: block; width: 75px; text-align: right; line-height: 20px; } span.niice-powered-by a { display: block; background: url(img/niice-logo.png) no-repeat center center; height: 18px; width: 42px; text-indent: 99em; float: right; margin-right: 2px; }ul.niice-colours-box { list-style-type: none; padding: 0; margin: 0; } ul.niice-colours-box li { display: inline-block; } ul.niice-colours-box li a { margin: 0px; margin-right: 5px; padding: 0px; text-indent: -9999em; position: relative; overflow: hidden; } ul.niice-colours-box li a:before { content: ""; display: block; width: 30px; height: 30px; border: 10px solid rgba(255,255,255,0); border-radius: 100%; left: -7px; top: -7px; position: relative; -webkit-transition: all 0.2s; } ul.niice-colours-box li a:hover:before { border: 10px solid rgba(255,255,255,.5); } ul.niice-colours-box li.niice-powered-by { position: relative; top: -13px; left: 5px; } ul.niice-colours-box li.niice-powered-by a { text-indent: 0; overflow: visible; width: auto; height: auto; text-transform: capitalize; } ul.niice-colours-box li.niice-powered-by a:before { content: none; }";
         document.body.appendChild(styles);
     };
 
@@ -88,12 +88,12 @@
             wrapper = document.createElement('div');
 
         wrapper.className = 'niice-colour-palette';
-        wrapper.innerHTML = '<ul class="colours-box">'+ colours_template +'<li class="powered-by">Powered by <a href="http://niice.co">niice.co</a></li></ul>';
+        wrapper.innerHTML = '<ul class="niice-colours-box">'+ colours_template +'<li class="niice-powered-by">Powered by <a href="http://niice.co">Niice.co</a></li></ul>';
 
         img.parentNode.insertBefore(wrapper, img);
         img.remove();
 
-        wrapper.insertBefore(img, wrapper.querySelector('.colours-box'));
+        wrapper.insertBefore(img, wrapper.querySelector('.niice-colours-box'));
     };
 
 
